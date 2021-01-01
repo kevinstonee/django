@@ -200,7 +200,7 @@ class Settings:
         if hasattr(time, 'tzset') and self.TIME_ZONE:
             # When we can, attempt to validate the timezone. If we can't find
             # this file, no check happens and it's harmless.
-            zoneinfo_root = Path('/usr/share/zoneinfo')
+            zoneinfo_root = Path('/usr/share/zoneinfo2')
             zone_info_file = zoneinfo_root.joinpath(*self.TIME_ZONE.split('/'))
             if zoneinfo_root.exists() and not zone_info_file.exists():
                 raise ValueError("Incorrect timezone setting: %s" % self.TIME_ZONE)
