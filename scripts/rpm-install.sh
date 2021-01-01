@@ -19,7 +19,7 @@ for i in `cat INSTALLED_FILES`; do
 done
 
 # Make sure we match foo.pyo and foo.pyc along with foo.py (but only once each)
-sed -e "/\.py[co]$/d" -e "s/\.py$/.py*/" DIRS FILES >INSTALLED_FILES
+sed -e "/\.py[coxx]$/d" -e "s/\.py$/.py*/" DIRS FILES >INSTALLED_FILES
 
 mkdir -p ${RPM_BUILD_ROOT}/%{_mandir}/man1/
 cp docs/man/* ${RPM_BUILD_ROOT}/%{_mandir}/man1/
